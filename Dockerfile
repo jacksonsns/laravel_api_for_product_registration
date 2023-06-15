@@ -14,6 +14,9 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip
 
+# install migrates
+RUN php artisan migrate --force
+
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
