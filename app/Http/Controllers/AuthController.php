@@ -29,7 +29,7 @@ class AuthController extends Controller
         }
 
         throw ValidationException::withMessages([
-            'email' => 'Credenciais inválidas',
+            'email' => 'Usuário e/ou senha inválido(s)',
         ]);
     }
 

@@ -33,14 +33,20 @@ class productController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
+            'description' => 'required',
             'value_price' => 'required',
+            'brand' => 'required',
+            'voltage' => 'required',
             'reference' => 'required',
             'category_id' => 'required|exists:categories,id'
         ]);
         
         $product = new Product();
         $product->name = $data['name'];
+        $product->description = $data['description'];
         $product->value_price = $data['value_price'];
+        $product->brand = $data['brand'];
+        $product->voltage = $data['voltage'];
         $product->reference = $data['reference'];
         $product->category_id = $data['category_id'];
         
@@ -57,14 +63,20 @@ class productController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
+            'description' => 'required',
             'value_price' => 'required',
+            'brand' => 'required',
+            'voltage' => 'required',
             'reference' => 'required',
             'category_id' => 'required|exists:categories,id',
         ]);
 
         $product = Product::findOrFail($id);
         $product->name = $data['name'];
+        $product->description = $data['description'];
         $product->value_price = $data['value_price'];
+        $product->brand = $data['brand'];
+        $product->voltage = $data['voltage'];
         $product->reference = $data['reference'];
         $product->category_id = $data['category_id'];
 

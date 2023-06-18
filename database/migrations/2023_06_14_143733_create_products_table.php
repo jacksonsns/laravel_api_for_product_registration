@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->double('value_price');
+            $table->double('description');
             $table->string('reference');
+            $table->enum('brand', ['Electrolux', 'Brastemp', 'Fischer', 'Samsung', 'LG']);
+            $table->enum('voltage', ['110v', '220v']);
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
