@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->double('value_price');
-            $table->double('description');
+            $table->string('description');
             $table->string('reference');
             $table->enum('brand', ['Electrolux', 'Brastemp', 'Fischer', 'Samsung', 'LG']);
             $table->enum('voltage', ['110v', '220v']);
